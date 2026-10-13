@@ -56,9 +56,11 @@ if (macDock) {
     });
   }
 
-  macDock.addEventListener("mousemove", handleDockMouseMove);
-  macDock.addEventListener("mouseleave", resetDock);
-  window.addEventListener("scroll", resetDock, { passive: true });
+  if (window.matchMedia("(pointer: fine)").matches) {
+    macDock.addEventListener("mousemove", handleDockMouseMove);
+    macDock.addEventListener("mouseleave", resetDock);
+    window.addEventListener("scroll", resetDock, { passive: true });
+  }
 }
 
 // Ensure external project links open in a new tab

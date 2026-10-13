@@ -45,6 +45,7 @@ body.dark {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
+  overflow-x: hidden;
 }
 
 body {
@@ -57,6 +58,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+.desktop-only {
+  display: inline;
 }
 
 /* ==========================================================================
@@ -1462,9 +1468,15 @@ body.dark .dock-tooltip::before {
   }
 }
 
+/* ==========================================================================
+   Responsive Breakpoints & Mobile Optimization
+   ========================================================================== */
+
+/* Single Column (Tablets & Large Phones) */
 @media (max-width: 850px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .profile-column {
@@ -1475,31 +1487,48 @@ body.dark .dock-tooltip::before {
 
   .avatar-intro {
     grid-column: 1 / -1;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .profile-card {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 92px 1fr;
     column-gap: 18px;
+    row-gap: 4px;
+    align-items: center;
+    padding: 22px 20px;
   }
 
   .avatar-img {
-    grid-row: 1 / span 3;
+    width: 92px;
+    height: 92px;
+    grid-row: 2 / span 3;
+    grid-column: 1;
   }
 
   .profile-card h1 {
+    grid-column: 2;
     align-self: end;
-    margin-top: 0;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.2;
   }
 
-  .profile-card .tagline,
+  .profile-card .tagline {
+    grid-column: 2;
+    font-size: 15px;
+    margin: 2px 0 0;
+  }
+
   .profile-card .location {
     grid-column: 2;
+    font-size: 13px;
+    margin: 2px 0 0;
   }
 
   .profile-section {
     grid-column: 1 / -1;
+    margin-top: 18px;
     margin-bottom: 24px;
   }
 
@@ -1508,132 +1537,414 @@ body.dark .dock-tooltip::before {
   }
 }
 
+/* Mobile Phones (iPhone & Android) */
 @media (max-width: 600px) {
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  /* Sleek, Single-Row Sticky Header */
   .topbar {
-    height: auto;
-    min-height: 56px;
-    padding: 10px 16px;
-    justify-content: center;
-    gap: 10px;
+    height: 52px;
+    min-height: 52px;
+    padding: 0 12px;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .main-nav {
-    gap: 4px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .main-nav a {
-    padding: 6px 10px;
+    padding: 6px 9px;
     font-size: 12px;
+    white-space: nowrap;
+    border-radius: 14px;
   }
 
+  .desktop-only {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  /* Mobile Page & Floating Clearance */
   .page {
-    margin: 0 14px;
+    margin: 0 12px;
+    padding-top: 14px;
+    padding-bottom: 92px;
   }
 
-  .section-heading h2 {
-    font-size: 20px;
+  /* Compact & Balanced Profile Header */
+  .profile-card {
+    padding: 18px 16px;
+    border-radius: 14px;
+    grid-template-columns: 80px 1fr;
+    column-gap: 14px;
+  }
+
+  .avatar-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-card h1 {
+    font-size: 21px;
+    letter-spacing: -0.4px;
+  }
+
+  .profile-card .tagline {
+    font-size: 14px;
+  }
+
+  .profile-card .location {
+    font-size: 12px;
   }
 
   #about h2,
   #skills h2 {
-    font-size: 19px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
+  #about p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .tags {
+    gap: 6px;
+  }
+
+  .tags span {
+    font-size: 11.5px;
+    padding: 5px 11px;
+  }
+
+  /* Section Spacing & Headings */
   .content-section {
-    margin-bottom: 48px;
+    margin-bottom: 44px;
   }
 
-  .profile-section {
-    margin-bottom: 28px;
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    margin-bottom: 14px;
   }
 
+  .section-heading h2 {
+    font-size: 21px;
+    letter-spacing: -0.4px;
+  }
+
+  .section-heading > span {
+    font-size: 10.5px;
+  }
+
+  /* Project Grid & Banner */
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    border-radius: 14px;
   }
 
   .project-card.featured {
     grid-column: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
-  .featured .project-art {
-    min-height: 170px;
-    height: 170px;
+  .featured-banner .project-art {
+    width: 100%;
+    height: 200px;
+    max-height: 210px;
+  }
+
+  .featured-banner .project-art-link {
+    padding: 8px 10px;
+  }
+
+  .featured-banner .project-body {
+    padding: 16px 16px 14px;
+  }
+
+  .project-body {
+    padding: 14px 15px 12px;
+  }
+
+  .project-body h3 {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .project-body > p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .project-tags span {
+    font-size: 10.5px;
+    padding: 3px 8px;
+  }
+
+  .project-footer {
+    font-size: 10.5px;
+    padding-top: 9px;
+    margin-top: 12px;
+  }
+
+  .project-footer a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* Experience Featured Card */
+  .featured .cert-art {
+    height: 175px;
+    min-height: 175px;
     border-right: none;
     border-bottom: 1px solid var(--line);
   }
 
-  .featured-banner .project-art {
-    height: 170px;
-    max-height: 180px;
+  .cert-placeholder {
+    padding: 14px 10px;
+    max-width: 270px;
   }
 
-  .project-art {
-    height: 160px;
+  .cert-placeholder h4 {
+    font-size: 15px;
   }
 
-  .contact-panel {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 22px 20px;
-    margin-top: 48px;
-    margin-bottom: 32px;
-  }
-
-  .contact-panel h2 {
-    font-size: 20px;
+  /* Education List on Mobile */
+  .edu-list {
+    padding: 2px 14px;
+    border-radius: 14px;
   }
 
   .edu-row {
-    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
     gap: 12px;
+    padding: 16px 0;
+  }
+
+  .edu-logo {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 4px;
+    margin-top: 2px;
+  }
+
+  .edu-info h3 {
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 3px;
+  }
+
+  .edu-info p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .grade {
+    font-size: 10.5px;
+    padding: 2px 7px;
   }
 
   .edu-date {
-    width: 100%;
-    order: 3;
-    font-size: 12px;
+    font-size: 11.5px;
+    margin-top: 3px;
+  }
+
+  /* Certifications Timeline on Mobile */
+  .cert-header {
+    padding: 8px 0 24px;
   }
 
   .cert-title {
-    font-size: 24px;
+    font-size: 22px;
+    letter-spacing: -0.6px;
+  }
+
+  .cert-subtitle {
+    font-size: 13px;
+    line-height: 1.55;
   }
 
   .cert-timeline {
-    padding-left: 32px;
+    padding-left: 28px;
   }
 
   .cert-timeline::before {
-    left: 20px;
+    left: 17px;
+  }
+
+  .cert-card-v2 {
+    gap: 12px;
+    padding-bottom: 28px;
   }
 
   .cert-icon {
-    margin-left: -32px;
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
+    margin-left: -28px;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-width: 2px;
   }
 
   .cert-icon span {
-    font-size: 17px;
+    font-size: 14px;
+  }
+
+  .cert-body {
+    padding-top: 0;
   }
 
   .cert-body h3 {
     font-size: 14.5px;
+    line-height: 1.35;
   }
 
+  .cert-body > p:not(.cert-date) {
+    font-size: 12px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .credential-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+
+  /* Contact Section & Mobile CTA */
+  .contact-panel {
+    padding: 22px 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .contact-panel h2 {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  .contact-panel p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contact-panel .primary-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+
+  /* Mobile Floating Dock (Thumb-friendly & Unobtrusive) */
+  .mac-dock {
+    bottom: max(10px, env(safe-area-inset-bottom));
+    padding: 6px 10px;
+    gap: 12px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  body.dark .mac-dock {
+    background: rgba(18, 19, 24, 0.94);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+  }
+
+  .dock-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .dock-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dock-dot {
+    display: none;
+  }
+
+  .dock-tooltip {
+    display: none !important;
+  }
+
+  /* Footer on Mobile */
   footer {
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    text-align: center;
+    font-size: 11px;
+    padding: 20px 0 10px;
+  }
+}
+
+/* Ultra-Compact Phones (e.g. iPhone SE / < 370px) */
+@media (max-width: 370px) {
+  .page {
+    margin: 0 8px;
+  }
+
+  .topbar {
+    padding: 0 8px;
+  }
+
+  .main-nav a {
+    padding: 5px 7px;
+    font-size: 11px;
   }
 
   .profile-card {
-    padding: 18px 16px;
+    grid-template-columns: 70px 1fr;
+    column-gap: 12px;
+    padding: 16px 12px;
+  }
+
+  .avatar-img {
+    width: 70px;
+    height: 70px;
   }
 
   .profile-card h1 {
-    font-size: 22px;
+    font-size: 19px;
+  }
+
+  .featured-banner .project-art {
+    height: 180px;
   }
 }
