@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Varun Kumar's portfolio — data analysis, machine learning, databases, and practical software projects.">
+  <title>Varun Kumar — Data Nerd !</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#projects">Explore projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle appearance"
+      title="Toggle appearance">
+      <span class="theme-icon">◐</span>
+    </button>
+  </header>
+
+  <main id="home" class="page">
+    <div class="layout">
+      <aside class="profile-column">
+        <section class="profile-card">
+          <div class="avatar-intro">
+            <span class="me-label">this is me :)</span>
+          </div>
+          <img class="avatar-img" src="Logos/profile.jpg" alt="Varun Kumar profile photo" width="130" height="130">
+          <h1>Varun Kumar</h1>
+          <p class="tagline">Data Nerd !</p>
+          <p class="location">Based in Amaravati, Andhra Pradesh</p>
+
+          <section class="profile-section" id="about">
+            <h2>About</h2>
+            <p>An analytical and detail-oriented data enthusiast who enjoys turning messy data into useful answers. I
+              work with Python, SQL, dashboards, and machine learning, and like building projects that connect technical
+              work to real problems.</p>
+          </section>
+
+          <section class="profile-section" id="skills">
+            <h2>Skills</h2>
+            <div class="tags">
+              <span>Python</span><span>SQL</span><span>PostgreSQL</span><span>MongoDB</span>
+              <span>FastAPI</span><span>Pandas</span><span>NumPy</span><span>scikit-learn</span>
+              <span>PyTorch</span><span>Power BI</span><span>Tableau</span><span>Excel</span>
+              <span>Docker</span><span>Git</span><span>FAISS</span>
+            </div>
+          </section>
+          <a class="email-card" href="mailto:varunkumartenali@gmail.com">
+            <span class="email-icon">✉</span><span><small>Have a project in mind?</small><strong>Let's
+                talk</strong></span><span class="email-arrow">↗</span>
+          </a>
+        </section>
+      </aside>
+
+      <div class="content-column">
+        <section id="projects" class="content-section">
+          <div class="section-heading">
+            <h2>Projects</h2><span></span>
+          </div>
+          <div class="project-grid">
+            <article class="project-card featured featured-banner">
+              <div class="project-art">
+                <a href="https://reducing-context-contamination-in-llm.streamlit.app/" target="_blank" rel="noreferrer"
+                  class="project-art-link" aria-label="Open PDF RAG Intelligence System in a new tab">
+                  <img class="project-img" src="Logos/rag-project.png"
+                    alt="PDF RAG Intelligence System dashboard interface preview" loading="lazy">
+                </a>
+              </div>
+              <div class="project-body">
+                <div class="project-meta"><span>AI / NLP</span><span>2026</span></div>
+                <h3><a href="https://reducing-context-contamination-in-llm.streamlit.app/" target="_blank" rel="noreferrer" class="project-title-link">PDF RAG Intelligence System</a></h3>
+                <p>A retrieval-augmented generation app for general questions, clinical reports, and legal documents,
+                  with an evaluation dashboard and a filter for noisy retrieved context.</p>
+                <div class="project-tags"><span>Python</span><span>FAISS</span><span>Hugging
+                    Face</span><span>Streamlit</span></div>
+                <div class="project-footer"><span>Context filtering · Evaluation</span><a
+                    href="https://reducing-context-contamination-in-llm.streamlit.app/" target="_blank" rel="noreferrer"
+                    aria-label="Open PDF RAG Intelligence System in a new tab">↗</a></div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-art art-market">
+                <div class="chart-head"><span>NSE · MARKET SIGNALS</span><span>↗</span></div>
+                <div class="chart-bars">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="chart-baseline"></div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta"><span>DATA ANALYTICS</span><span>2026</span></div>
+                <h3>Market Analytics &amp; Anomaly Detection</h3>
+                <p>A Python pipeline for NSE stock data, combining rolling market indicators with Isolation Forest to
+                  flag unusual activity and explore results in a dashboard.</p>
+                <div class="project-tags"><span>Pandas</span><span>MongoDB</span><span>Plotly</span></div>
+                <div class="project-footer"><span>Data pipeline · Dashboard</span><a href="#contact"
+                    aria-label="Ask about Market Analytics project">↗</a></div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-art art-ticket">
+                <div class="ticket-window">
+                  <div class="ticket-top"><span></span><span></span><span></span></div>
+                  <div class="ticket-row"><b>Billing issue</b><em>Billing</em></div>
+                  <div class="ticket-row"><b>Login problem</b><em>Technical</em></div>
+                  <div class="ticket-row"><b>Refund request</b><em>Payments</em></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta"><span>MACHINE LEARNING</span><span>2026</span></div>
+                <h3>AI Ticket Triage Tool</h3>
+                <p>A lightweight tool that classifies incoming support requests, suggests a route, and lets staff review
+                  or override predictions. Includes a framework to compare routing time.</p>
+                <div class="project-tags"><span>Flask</span><span>scikit-learn</span><span>Gemini API</span></div>
+                <div class="project-footer"><span>Text classification · Workflow</span><a href="#contact"
+                    aria-label="Ask about AI Ticket Triage Tool">↗</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" class="content-section">
+          <div class="section-heading">
+            <h2>Experience &amp; Learning</h2><span>Database administration</span>
+          </div>
+          <div class="project-grid">
+            <article class="project-card featured">
+              <div class="project-art cert-art">
+                <img class="cert-img" src="Logos/certificate.jpg" alt="MongoDB Certified Database Administrator"
+                  onerror="this.style.display='none'">
+                <div class="cert-placeholder">
+                  <div class="cert-badge-ribbon"><span>★ VERIFIED</span></div>
+                  <div class="cert-symbol-mark">🍃</div>
+                  <span class="art-label">MONGODB UNIVERSITY · CERTIFICATION</span>
+                  <h4>Database Administrator</h4>
+                  <p class="cert-meta-desc">15 Skill Badges · Exam Learning Path</p>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta"><span>DATABASE ADMINISTRATION</span><span>May – Jul 2026</span></div>
+                <h3>MongoDB Database Administrator</h3>
+                <p>Completed the MongoDB Database Administrator Exam learning path and earned 15 skill badges. Practised
+                  CRUD operations, aggregation pipelines, schema design, indexing, replica sets, access control,
+                  monitoring, backup, and recovery concepts.</p>
+                <div class="project-tags">
+                  <span>MongoDB</span><span>Indexes</span><span>Replication</span><span>Security</span>
+                </div>
+                <div class="project-footer">
+                  <span>15 Skill Badges · Practical Exam Path</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="education" class="content-section">
+          <div class="section-heading">
+            <h2>Education</h2>
+          </div>
+          <div class="edu-list">
+            <div class="edu-row">
+              <img class="edu-logo" src="Logos/vit.jpg" alt="VIT-AP University logo" width="56" height="56"
+                loading="lazy">
+              <div class="edu-info">
+                <h3>Vellore Institute of Technology, Amaravati</h3>
+                <p>B.Tech, Computer Science and Engineering</p>
+                <span class="grade">CGPA: 8.08 / 10</span>
+              </div>
+              <span class="edu-date">2023 – 2027</span>
+            </div>
+            <div class="edu-row">
+              <img class="edu-logo" src="Logos/narayana.jpg" alt="Narayana Jr College logo" width="56" height="56"
+                loading="lazy">
+              <div class="edu-info">
+                <h3>Narayana Jr College, Vuyyuru</h3>
+                <p>Class XII - PCM</p>
+                <span class="grade">Marks: 961 / 1000</span>
+              </div>
+              <span class="edu-date">2021 – 2023</span>
+            </div>
+            <div class="edu-row">
+              <img class="edu-logo" src="Logos/flora.jpg" alt="Flora EM High School logo" width="56" height="56"
+                loading="lazy">
+              <div class="edu-info">
+                <h3>Flora EM High School , Vuyyuru</h3>
+                <p>Class X- Science</p>
+                <span class="grade">Marks: 600 / 600</span>
+              </div>
+              <span class="edu-date">2020 – 2021</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="certifications" class="content-section">
+          <div class="cert-header">
+            <span class="cert-pill">Certificates</span>
+            <h2 class="cert-title">I enjoy learning new things.</h2>
+            <p class="cert-subtitle">I've completed several certifications at university so far, and I'm excited to keep
+              learning and advancing my skills.</p>
+          </div>
+          <div class="cert-timeline">
+            <article class="cert-card-v2">
+              <div class="cert-icon cert-icon--mongo">
+                <img class="cert-icon-img" src="Logos/mongodb.jpg" alt="MongoDB logo"
+                  onerror="this.style.display='none'">
+                <span>🍃</span>
+              </div>
+              <div class="cert-body">
+                <p class="cert-date">Oct 2026</p>
+                <h3>MongoDB Associate Database Administrator</h3>
+                <p>Validated skills in MongoDB database administration, core database concepts, optimization, and
+                  problem-solving, including installation, configuration, monitoring, performance optimization, and
+                  backup
+                  strategies.</p>
+                <a class="credential-btn"
+                  href="https://www.credly.com/earner/earned/badge/d8257eb9-6950-4cf6-b412-a861fef2fa2c" target="_blank"
+                  rel="noreferrer"><span class="credential-icon">⊕</span> View Credential</a>
+              </div>
+            </article>
+            <article class="cert-card-v2">
+              <div class="cert-icon cert-icon--aws">
+                <img class="cert-icon-img" src="Logos/aws.png" alt="AWS logo" onerror="this.style.display='none'">
+                <span>aws</span>
+              </div>
+              <div class="cert-body">
+                <p class="cert-date">Sep 2025</p>
+                <h3>AWS Academy Graduate – Cloud Architecting</h3>
+                <p>Completed a comprehensive Cloud Architecting program, gaining expertise in designing, deploying, and
+                  managing scalable and secure cloud solutions, including cloud architecture patterns, best practices,
+                  and cost optimization strategies.</p>
+                <a class="credential-btn" href="https://www.credly.com/badges/3c6580fe-2875-4405-837c-60823cb25471/"
+                  target="_blank" rel="noreferrer"><span class="credential-icon">⊕</span> View Credential</a>
+              </div>
+            </article>
+            <article class="cert-card-v2">
+              <div class="cert-icon cert-icon--aws">
+                <img class="cert-icon-img" src="Logos/aws.png" alt="AWS logo" onerror="this.style.display='none'">
+                <span>aws</span>
+              </div>
+              <div class="cert-body">
+                <p class="cert-date">Sep 2025</p>
+                <h3>AWS Academy Graduate – Cloud Foundations</h3>
+                <p>Completed AWS Academy Cloud Foundations program, gaining comprehensive knowledge of Amazon Web
+                  Services cloud computing fundamentals, including core AWS services, security, architecture, and
+                  pricing models.</p>
+                <a class="credential-btn" href="https://www.credly.com/badges/8169c923-0618-45fc-b04e-133cd0bdfef2/"
+                  target="_blank" rel="noreferrer"><span class="credential-icon">⊕</span> View Credential</a>
+              </div>
+            </article>
+            <article class="cert-card-v2">
+              <div class="cert-icon cert-icon--stanford">
+                <img class="cert-icon-img" src="Logos/ml.png" alt="Stanford University & DeepLearning.AI logo"
+                  onerror="this.style.display='none'">
+                <span>ML</span>
+              </div>
+              <div class="cert-body">
+                <p class="cert-date">April 2025</p>
+                <h3>Supervised Machine Learning</h3>
+                <p>Completed an online course authorized by Stanford University and DeepLearning.AI, gaining hands-on
+                  experience in building and training predictive and binary classification models using Python, NumPy,
+                  and
+                  Scikit-learn.</p>
+                <a class="credential-btn" href="https://www.coursera.org/account/accomplishments/verify/NZ09L2H3WGFG"
+                  target="_blank" rel="noreferrer"><span class="credential-icon">⊕</span> View Credential</a>
+              </div>
+            </article>
+            <article class="cert-card-v2">
+              <div class="cert-icon cert-icon--google">
+                <img class="cert-icon-img" src="Logos/google.png" alt="Google logo" onerror="this.style.display='none'">
+                <span>G</span>
+              </div>
+              <div class="cert-body">
+                <p class="cert-date">Jan 2025</p>
+                <h3>Google Crash Course on Python</h3>
+                <p>Completed an industry-recognized course authorized by Google, developing proficiency in Python
+                  scripting, automation, and core data structures including strings, lists, and dictionaries.</p>
+                <a class="credential-btn" href="https://www.coursera.org/account/accomplishments/verify/H4SYBDTUTG6C"
+                  target="_blank" rel="noreferrer"><span class="credential-icon">⊕</span> View Credential</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" class="contact-panel">
+          <div>
+            <p class="eyebrow">CONTACT</p>
+            <h2>Let's make data useful.</h2>
+            <p>Open to connecting about data, analytics, and software projects.</p>
+          </div>
+          <a class="primary-btn" href="mailto:varunkumartenali@gmail.com">Email Varun ↗</a>
+        </section>
+        <footer><span>Varun Kumar · Data Nerd</span><span>Built around projects, not buzzwords.</span></footer>
+      </div>
+    </div>
+  </main>
+  <!-- macOS Left Dock -->
+  <aside class="mac-dock" id="macDock" aria-label="Social links dock">
+    <a href="https://www.linkedin.com/in/varun-kumar-4b3593283/" target="_blank" rel="noreferrer" class="dock-item"
+      aria-label="LinkedIn">
+      <div class="dock-icon dock-icon--linkedin">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path
+            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.27a1.64 1.64 0 0 0-1.66 1.63 1.65 1.65 0 0 0 1.66 1.64 1.64 1.64 0 0 0 1.65-1.64 1.64 1.64 0 0 0-1.65-1.63Z" />
+        </svg>
+      </div>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">LinkedIn</span>
+    </a>
+
+    <a href="https://github.com/Varun-0731" target="_blank" rel="noreferrer" class="dock-item" aria-label="GitHub">
+      <div class="dock-icon dock-icon--github">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
+      </div>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">GitHub</span>
+    </a>
+
+
+    <a href="https://drive.google.com/file/d/1mWdECjgbR5xs8M7zG__tXdJYR7DX_qI_/view?usp=sharing" target="_blank"
+      rel="noreferrer" class="dock-item" aria-label="Resume">
+      <div class="dock-icon dock-icon--resume">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+        </svg>
+      </div>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Resume</span>
+    </a>
+
+    <a href="mailto:varunkumartenali@gmail.com" target="_blank" rel="noreferrer" class="dock-item" aria-label="Email">
+      <div class="dock-icon dock-icon--mail">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path
+            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+      </div>
+      <span class="dock-dot"></span>
+      <span class="dock-tooltip">Email</span>
+    </a>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
