@@ -45,7 +45,7 @@ body.dark {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -58,7 +58,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.2s ease, color 0.2s ease;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .desktop-only {
@@ -157,10 +157,11 @@ body.dark .topbar {
 }
 
 .profile-column {
+  position: -webkit-sticky;
   position: sticky;
-  top: 88px;
+  top: 84px;
   align-self: start;
-  max-height: calc(100vh - 104px);
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
